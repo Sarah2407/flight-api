@@ -1,12 +1,11 @@
 const express = require("express");
-const { json } = require("express");
-const flights = require("./controllers/flightController");
-const models = require("./models/Flight");
+// const { json } = require("express");
+const bodyParser = require("body-parser");
 const routes = require("./routes/flightRoute");
 
 const app = express();
 
-app.use(json());
+app.use(bodyParser.json());
 
 app.use("/", routes);
 
